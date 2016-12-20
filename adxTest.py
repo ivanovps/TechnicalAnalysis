@@ -9,7 +9,7 @@ import csv as csv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from adx import adx
+from adxfunction import adxfunction
 
 csvObject = csv.reader(open("adxTest.csv"));
 quoteData = [];
@@ -20,4 +20,4 @@ for row in csvObject:
 quoteData = np.array(quoteData);
 quoteData = quoteData[0::,1:4];
 quoteData = quoteData.astype(np.float)
-( TR, DM14Plus, DM14Minus, DIPlus, DIMinus, DX, ADX) = adx(quoteData, 14)
+DM1Plus, DM1Minus, tr, DM14Plus, DM14Minus, DIPlus, DIMinus, dx, adx = adxfunction(quoteData, 14)
